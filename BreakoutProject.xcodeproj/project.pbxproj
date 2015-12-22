@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C04AD5101C28391F005DEFBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E846611C244558003FC31C /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		C0860A9C1C24628A00B1696A /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0860A9B1C24628A00B1696A /* GameOverScene.swift */; settings = {ASSET_TAGS = (); }; };
 		C0E846571C244557003FC31C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E846561C244557003FC31C /* AppDelegate.swift */; };
 		C0E846591C244558003FC31C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0E846581C244558003FC31C /* GameScene.sks */; };
 		C0E8465B1C244558003FC31C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8465A1C244558003FC31C /* GameScene.swift */; };
 		C0E8465D1C244558003FC31C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8465C1C244558003FC31C /* GameViewController.swift */; };
 		C0E846601C244558003FC31C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E8465E1C244558003FC31C /* Main.storyboard */; };
-		C0E846621C244558003FC31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E846611C244558003FC31C /* Assets.xcassets */; };
 		C0E846651C244558003FC31C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E846631C244558003FC31C /* LaunchScreen.storyboard */; };
 		C0E8466D1C24466A003FC31C /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C0E8466C1C24466A003FC31C /* bgMusic.mp3 */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -136,8 +136,8 @@
 				C0E846591C244558003FC31C /* GameScene.sks in Resources */,
 				C0E846651C244558003FC31C /* LaunchScreen.storyboard in Resources */,
 				C0E8466D1C24466A003FC31C /* bgMusic.mp3 in Resources */,
-				C0E846621C244558003FC31C /* Assets.xcassets in Resources */,
 				C0E846601C244558003FC31C /* Main.storyboard in Resources */,
+				C04AD5101C28391F005DEFBB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

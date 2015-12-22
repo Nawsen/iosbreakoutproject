@@ -10,15 +10,32 @@ import SpriteKit
 
 class GameOverScene: SKScene {
     
+    var viewController:UIViewController?
+    
+    var returnButton:SKNode!
+    var replayButton:SKNode!
+    
     init(size: CGSize, playerWon:Bool) {
         super.init(size:size)
-        let background = SKSpriteNode(imageNamed: "bg")
+                
+        let background = SKSpriteNode(imageNamed: "bg2")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         
         self.addChild(background)
         let gameOverLabel = SKLabelNode(fontNamed: "Avenir-Black")
         gameOverLabel.fontSize = 46
-        gameOverLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        gameOverLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) * 1.2)
+        
+        
+        // maak de return to home screen button
+        returnButton = SKSpriteNode(imageNamed: "ReturnButton")
+        returnButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)/2);
+        self.addChild(returnButton)
+        replayButton = SKSpriteNode(imageNamed: "AgainButton")
+        replayButton.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame)/2 + 35)
+        
+        self.addChild(replayButton)
+        
         
         if playerWon{
             gameOverLabel.text = "You WIN!"
@@ -31,8 +48,24 @@ class GameOverScene: SKScene {
         self.addChild(gameOverLabel)
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let breakoutGameScene = GameScene(size: self.size)
-        self.view?.presentScene(breakoutGameScene)
+        //let breakoutGameScene = GameScene(size: self.size)
+        //self.view?.presentScene(breakoutGameScene)
+        
+        
+        for touch: AnyObject in touches {
+            // Get the location of the touch in this scene
+            let location = touch.locationInNode(self)
+            // Check if the location of the touch is within the button's bounds
+            if returnButton.containsPoint(location) {
+                viewController!.performSegueWithIdentifier("returnStart", sender: viewController)
+            }
+            if replayButton.containsPoint(location) {
+                let breakoutGameScene = GameScene(size: self.size, level: 1)
+                breakoutGameScene.viewController = viewController
+                self.view?.presentScene(breakoutGameScene)
+            }
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder){
