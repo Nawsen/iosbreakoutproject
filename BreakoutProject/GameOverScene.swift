@@ -15,9 +15,20 @@ class GameOverScene: SKScene {
     var returnButton:SKNode!
     var replayButton:SKNode!
     
-    init(size: CGSize, playerWon:Bool) {
+    init(size: CGSize, playerWon:Bool, level:Int) {
         super.init(size:size)
-                
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if let highscore = userDefaults.valueForKey("highscore"){
+            if (highscore as? Int) < level {
+               userDefaults.setValue(level, forKey: "highscore")
+            }
+        }
+        else {
+            userDefaults.setValue(level, forKey: "highscore")
+        }
+        
         let background = SKSpriteNode(imageNamed: "bg2")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         

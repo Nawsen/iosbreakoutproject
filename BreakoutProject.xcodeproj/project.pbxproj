@@ -16,6 +16,7 @@
 		C0E846601C244558003FC31C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E8465E1C244558003FC31C /* Main.storyboard */; };
 		C0E846651C244558003FC31C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E846631C244558003FC31C /* LaunchScreen.storyboard */; };
 		C0E8466D1C24466A003FC31C /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C0E8466C1C24466A003FC31C /* bgMusic.mp3 */; settings = {ASSET_TAGS = (); }; };
+		C0F0A16A1C2AEE9A00E3BA0C /* HighscoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F0A1691C2AEE9A00E3BA0C /* HighscoreController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C0E846641C244558003FC31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0E846661C244558003FC31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E8466C1C24466A003FC31C /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
+		C0F0A1691C2AEE9A00E3BA0C /* HighscoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				C0E846611C244558003FC31C /* Assets.xcassets */,
 				C0E846631C244558003FC31C /* LaunchScreen.storyboard */,
 				C0E846661C244558003FC31C /* Info.plist */,
+				C0F0A1691C2AEE9A00E3BA0C /* HighscoreController.swift */,
 			);
 			path = BreakoutProject;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E8465B1C244558003FC31C /* GameScene.swift in Sources */,
+				C0F0A16A1C2AEE9A00E3BA0C /* HighscoreController.swift in Sources */,
 				C0E8465D1C244558003FC31C /* GameViewController.swift in Sources */,
 				C0860A9C1C24628A00B1696A /* GameOverScene.swift in Sources */,
 				C0E846571C244557003FC31C /* AppDelegate.swift in Sources */,

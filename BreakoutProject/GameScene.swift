@@ -11,6 +11,7 @@ import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    
     var viewController:UIViewController!
     var cLevel:Int = 1
     var fingerIsOnPaddle = false
@@ -257,16 +258,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if firstBody.categoryBitMask == ballCategory && secondBody.categoryBitMask == bottomCategory {
-            let gameOverScene = GameOverScene(size: self.frame.size, playerWon: false)
+            let gameOverScene = GameOverScene(size: self.frame.size, playerWon: false, level: cLevel - 1)
             gameOverScene.viewController = viewController
             self.view?.presentScene(gameOverScene)
         }
         if firstBody.categoryBitMask == ballCategory && secondBody.categoryBitMask == brickCategory {
             secondBody.node?.removeFromParent()
             if isGameWon() {
-                if cLevel < 4 {
+                if cLevel > 4 {
                     //load victory screen
-                    let victoryScene = GameOverScene(size: self.frame.size, playerWon: true)
+                    let victoryScene = GameOverScene(size: self.frame.size, playerWon: true, level: cLevel)
                     victoryScene.viewController = viewController
                     self.view?.presentScene(victoryScene)
                 }

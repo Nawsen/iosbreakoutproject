@@ -13,7 +13,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBarHidden = true
     }
 
     override func viewWillLayoutSubviews() {
@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
         if skView.scene == nil {
             skView.showsFPS = true
             skView.showsNodeCount = true
-            let gameScene = GameScene(size: skView.bounds.size, level: 5)
+            let gameScene = GameScene(size: skView.bounds.size, level: 2)
             gameScene.viewController = self
             gameScene.scaleMode = .AspectFill
             
