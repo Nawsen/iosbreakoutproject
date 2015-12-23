@@ -21,6 +21,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var backgroundMusicPlayer = AVAudioPlayer()
     
+    var ball:SKSpriteNode!
+    var ballInMotion:Bool = false
+    
     let ballCategory:UInt32 = 0x1 << 0
     let bottomCategory:UInt32 = 0x1 << 1
     let brickCategory:UInt32 = 0x1 << 2
@@ -54,10 +57,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsBody?.friction = 0
         
         //laad de bal in
-        let ball = SKSpriteNode(imageNamed: "ball")
+        ball = SKSpriteNode(imageNamed: "ball")
         ball.name = ballCategoryName
-        ball.position = CGPointMake(self.frame.size.width/4, self.frame.height/4)
-        self.addChild(ball)
+        
+        
         
         //zet de physics van de ball
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.frame.size.width/2)
@@ -66,13 +69,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball.physicsBody?.linearDamping = 0
         ball.physicsBody?.allowsRotation = false
         //impulse moet in het begin gegeven worden anders zal de bal gewoon stilstaan
-        ////ball.physicsBody?.applyImpulse(CGVectorMake(1, 1))
+        
         
         //laad de paddle in
         let paddle = SKSpriteNode(imageNamed: "paddle")
         paddle.name = paddleCategoryName
         paddle.position = CGPointMake(CGRectGetMidX(self.frame), paddle.frame.size.height * 2)
         self.addChild(paddle)
+        
+        ball.position = CGPointMake(CGRectGetMidX(self.frame), paddle.frame.size.height * 2 + ball.frame.size.height)
+        self.addChild(ball)
         
         //voeg physics toe
         paddle.physicsBody = SKPhysicsBody(rectangleOfSize: paddle.frame.size)
@@ -92,11 +98,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         ball.physicsBody?.contactTestBitMask = bottomCategory | brickCategory
         
+        for l in 1 ... cLevel {
         //set bricks
             let numberOfRows = 3
             let numberOfBricks = 4
-            let brickWidth = self.frame.width/6
-            let padding:Float = 20
+            var brickWidth = (self.frame.width/6)
+            var padding:Float = 20
+            if l == 2 {
+                brickWidth = brickWidth - 2
+            }
+            if l == 3 {
+                brickWidth = brickWidth - 6
+            }
+            if l == 4 {
+                brickWidth = brickWidth - 10
+            }
+            if l == 5 {
+                brickWidth = brickWidth - 14
+            }
+            
             
             let offset:Float = (Float(self.frame.size.width) - (Float(brickWidth) * Float(numberOfBricks) + padding * (Float(numberOfBricks)-1)))/2
             
@@ -116,16 +136,56 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
                 
                 for index in 1 ... numberOfBricks {
+                    var brick: SKSpriteNode!
+                    var calc1:Float!
+                    var calc2:Float!
+                    if l == 1 {
+                        brick = SKSpriteNode(color: UIColor.grayColor(), size: CGSize(width: brickWidth, height: self.frame.height/12))
+                        calc1 = Float(index) - 0.5
+                        calc2 = Float(index) - 1
+                        brick.position = CGPointMake(CGFloat(calc1 * Float(brickWidth) + calc2 * padding + offset), yOffset)
+                        brick.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: brickWidth, height: self.frame.height/12))
+
+                    }
+                    if l == 2 {
+                        brick = SKSpriteNode(color: UIColor.blueColor(), size: CGSize(width: brickWidth, height: self.frame.height/12 - 2))
+                        calc1 = Float(index) - 0.50
+                        calc2 = Float(index) - 1
+                        padding = 22
+                        brick.position = CGPointMake(CGFloat((calc1 * Float(brickWidth) + calc2 * padding + offset) - 3), yOffset)
+                        brick.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: brickWidth, height: self.frame.height/12 - 4))
+
+                    }
+                    if l == 3 {
+                        brick = SKSpriteNode(color: UIColor.redColor(), size: CGSize(width: brickWidth, height: self.frame.height/12 - 6))
+                        calc1 = Float(index) - 0.50
+                        calc2 = Float(index) - 1
+                        padding = 26
+                        brick.position = CGPointMake(CGFloat((calc1 * Float(brickWidth) + calc2 * padding + offset) - 9), yOffset)
+                        brick.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: brickWidth, height: self.frame.height/12 - 8))
+                        
+                    }
+                    if l == 4 {
+                        brick = SKSpriteNode(color: UIColor.yellowColor(), size: CGSize(width: brickWidth, height: self.frame.height/12 - 10))
+                        calc1 = Float(index) - 0.50
+                        calc2 = Float(index) - 1
+                        padding = 30
+                        brick.position = CGPointMake(CGFloat((calc1 * Float(brickWidth) + calc2 * padding + offset) - 15), yOffset)
+                        brick.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: brickWidth, height: self.frame.height/12 - 12))
+                        
+                    }
+                    if l == 5 {
+                        brick = SKSpriteNode(color: UIColor.orangeColor(), size: CGSize(width: brickWidth, height: self.frame.height/12 - 14))
+                        calc1 = Float(index) - 0.50
+                        calc2 = Float(index) - 1
+                        padding = 34
+                        brick.position = CGPointMake(CGFloat((calc1 * Float(brickWidth) + calc2 * padding + offset) - 21), yOffset)
+                        brick.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: brickWidth, height: self.frame.height/12 - 16))
+                        
+                    }
                     
-                    let brick = SKSpriteNode(color: UIColor.grayColor(), size: CGSize(width: brickWidth, height: self.frame.height/12))
                     
                     
-                    let calc1:Float = Float(index) - 0.5
-                    let calc2:Float = Float(index) - 1
-                    
-                    brick.position = CGPointMake(CGFloat(calc1 * Float(brick.frame.size.width)+2 + calc2 * padding + offset), yOffset)
-                    
-                    brick.physicsBody = SKPhysicsBody(rectangleOfSize: brick.frame.size)
                     brick.physicsBody?.allowsRotation = false
                     brick.physicsBody?.friction = 0
                     brick.physicsBody?.dynamic = false
@@ -134,7 +194,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     self.addChild(brick)
                     }
-
+                
+                }
                     
                 
                 
@@ -147,7 +208,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first
         let touchLocation = touch!.locationInNode(self)
-        
+
+        if !ballInMotion{
+            ball.physicsBody?.applyImpulse(CGVectorMake(0.5, 1))
+            ballInMotion = true
+        }
         let body:SKPhysicsBody? = self.physicsWorld.bodyAtPoint(touchLocation)
         
         if body?.node?.name == paddleCategoryName {
@@ -199,6 +264,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if firstBody.categoryBitMask == ballCategory && secondBody.categoryBitMask == brickCategory {
             secondBody.node?.removeFromParent()
             if isGameWon() {
+                if cLevel < 4 {
+                    //load victory screen
+                    let victoryScene = GameOverScene(size: self.frame.size, playerWon: true)
+                    victoryScene.viewController = viewController
+                    self.view?.presentScene(victoryScene)
+                }
                 //load next level
                 
                 let newLevelScene = GameScene(size: self.frame.size, level: cLevel + 1)
