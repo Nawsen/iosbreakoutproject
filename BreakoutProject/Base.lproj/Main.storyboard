@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VfB-gW-Eo5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -76,6 +77,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Xex-TK-dD3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YoP-my-ZPz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello there" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GS-do-tor">
@@ -124,14 +126,14 @@
                                 <exclude reference="6gw-eX-gvq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ARu-KP-g9u"/>
-                                <exclude reference="G6a-gs-fMW"/>
-                                <exclude reference="jB1-up-XFd"/>
+                                <exclude reference="NBP-5r-7tJ"/>
+                                <exclude reference="byH-HV-Oy7"/>
                                 <exclude reference="JaA-Ft-hl2"/>
                                 <exclude reference="KCX-cQ-GhR"/>
                                 <exclude reference="qFT-Fo-OTf"/>
-                                <exclude reference="NBP-5r-7tJ"/>
-                                <exclude reference="byH-HV-Oy7"/>
+                                <exclude reference="ARu-KP-g9u"/>
+                                <exclude reference="G6a-gs-fMW"/>
+                                <exclude reference="jB1-up-XFd"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -142,14 +144,14 @@
                                 <include reference="6gw-eX-gvq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ARu-KP-g9u"/>
-                                <include reference="G6a-gs-fMW"/>
-                                <include reference="jB1-up-XFd"/>
+                                <include reference="NBP-5r-7tJ"/>
+                                <include reference="byH-HV-Oy7"/>
                                 <include reference="JaA-Ft-hl2"/>
                                 <include reference="KCX-cQ-GhR"/>
                                 <include reference="qFT-Fo-OTf"/>
-                                <include reference="NBP-5r-7tJ"/>
-                                <include reference="byH-HV-Oy7"/>
+                                <include reference="ARu-KP-g9u"/>
+                                <include reference="G6a-gs-fMW"/>
+                                <include reference="jB1-up-XFd"/>
                             </mask>
                         </variation>
                     </view>

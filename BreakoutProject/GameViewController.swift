@@ -9,6 +9,8 @@
 import UIKit
 import SpriteKit
 
+//tutorial voor de basics van de game https://www.youtube.com/watch?v=Cgo7LCLy0mg
+
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,7 +24,7 @@ class GameViewController: UIViewController {
         if skView.scene == nil {
             skView.showsFPS = true
             skView.showsNodeCount = true
-            let gameScene = GameScene(size: skView.bounds.size, level: 2)
+            let gameScene = GameScene(size: skView.bounds.size, level: 1)
             gameScene.viewController = self
             gameScene.scaleMode = .AspectFill
             

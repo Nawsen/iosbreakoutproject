@@ -21,7 +21,8 @@ class GameOverScene: SKScene {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         if let highscore = userDefaults.valueForKey("highscore"){
-            if (highscore as? Int) < level {
+            let H = highscore as? NSNumber
+            if Int(H!.description) < level {
                userDefaults.setValue(level, forKey: "highscore")
             }
         }
