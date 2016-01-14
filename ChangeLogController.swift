@@ -18,7 +18,9 @@ class ChangeLogController: UITableViewController {
         "v0.5 : Highscore screen created",
         "v0.6 : Highscore now gets saved",
         "v0.7 : Highscore reset implemented",
-        "v0.8 : TableViewController for this log created"]
+        "v0.8 : TableViewController for this log created",
+        "v0.9 : Background now stretches to all screen sizes",
+        "v1.0 : _•_ GAME RELEASE _•_"]
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
