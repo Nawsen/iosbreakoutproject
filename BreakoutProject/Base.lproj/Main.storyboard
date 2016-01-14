@@ -38,16 +38,19 @@
                                     <segue destination="Ngh-oG-2ZD" kind="show" id="CED-Wd-hu0"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="aF0-qw-KSq">
-                                <rect key="frame" x="99" y="166" width="402" height="61"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="aF0-qw-KSq">
+                                <rect key="frame" x="99" y="131" width="402" height="61"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Fzh-nn-7wp" firstAttribute="top" secondItem="aF0-qw-KSq" secondAttribute="bottom" constant="20" id="1Kp-9G-Ynb"/>
+                            <constraint firstItem="Fzh-nn-7wp" firstAttribute="top" secondItem="aF0-qw-KSq" secondAttribute="bottom" constant="20" id="1Kp-9G-Ynb">
+                                <variation key="heightClass=compact" constant="35"/>
+                            </constraint>
                             <constraint firstItem="DLQ-Za-f4n" firstAttribute="centerX" secondItem="kUT-1h-zb1" secondAttribute="centerX" id="M26-tS-Sh1"/>
                             <constraint firstItem="aF0-qw-KSq" firstAttribute="centerX" secondItem="kUT-1h-zb1" secondAttribute="centerX" id="b0X-xJ-Um9"/>
                             <constraint firstItem="Fzh-nn-7wp" firstAttribute="centerY" secondItem="kUT-1h-zb1" secondAttribute="centerY" id="eVI-F2-7wp"/>
+                            <constraint firstItem="Fzh-nn-7wp" firstAttribute="top" secondItem="aF0-qw-KSq" secondAttribute="bottom" constant="75" id="ffU-0F-pIK"/>
                             <constraint firstItem="DLQ-Za-f4n" firstAttribute="top" secondItem="Fzh-nn-7wp" secondAttribute="bottom" constant="8" id="gIV-rw-jNi"/>
                             <constraint firstItem="Fzh-nn-7wp" firstAttribute="centerX" secondItem="kUT-1h-zb1" secondAttribute="centerX" id="rjR-Le-8Gj"/>
                         </constraints>
@@ -80,6 +83,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iob-sI-z0D">
+                                <rect key="frame" x="20" y="550" width="79" height="30"/>
+                                <state key="normal" title="ChangeLog"/>
+                                <connections>
+                                    <segue destination="LGj-ki-Y8O" kind="show" id="3Ll-X4-nrk"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello there" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GS-do-tor">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
@@ -114,8 +124,10 @@
                             <constraint firstItem="1GS-do-tor" firstAttribute="centerX" secondItem="YoP-my-ZPz" secondAttribute="centerX" id="JaA-Ft-hl2"/>
                             <constraint firstItem="R83-4S-TZS" firstAttribute="top" secondItem="nYi-0X-BrV" secondAttribute="bottom" constant="8" id="KCX-cQ-GhR"/>
                             <constraint firstItem="Xex-TK-dD3" firstAttribute="top" secondItem="6gw-eX-gvq" secondAttribute="bottom" id="NBP-5r-7tJ"/>
+                            <constraint firstItem="Iob-sI-z0D" firstAttribute="leading" secondItem="YoP-my-ZPz" secondAttribute="leadingMargin" id="Oxx-H2-gMN"/>
                             <constraint firstItem="6gw-eX-gvq" firstAttribute="trailing" secondItem="YoP-my-ZPz" secondAttribute="trailingMargin" id="byH-HV-Oy7"/>
                             <constraint firstItem="nYi-0X-BrV" firstAttribute="centerY" secondItem="YoP-my-ZPz" secondAttribute="centerY" id="jB1-up-XFd"/>
+                            <constraint firstItem="Xex-TK-dD3" firstAttribute="top" secondItem="Iob-sI-z0D" secondAttribute="bottom" constant="20" id="pAb-vR-m6v"/>
                             <constraint firstItem="R83-4S-TZS" firstAttribute="centerX" secondItem="YoP-my-ZPz" secondAttribute="centerX" id="qFT-Fo-OTf"/>
                         </constraints>
                         <variation key="default">
@@ -126,7 +138,6 @@
                                 <exclude reference="6gw-eX-gvq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="NBP-5r-7tJ"/>
                                 <exclude reference="byH-HV-Oy7"/>
                                 <exclude reference="JaA-Ft-hl2"/>
                                 <exclude reference="KCX-cQ-GhR"/>
@@ -134,6 +145,7 @@
                                 <exclude reference="ARu-KP-g9u"/>
                                 <exclude reference="G6a-gs-fMW"/>
                                 <exclude reference="jB1-up-XFd"/>
+                                <exclude reference="NBP-5r-7tJ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -144,7 +156,6 @@
                                 <include reference="6gw-eX-gvq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="NBP-5r-7tJ"/>
                                 <include reference="byH-HV-Oy7"/>
                                 <include reference="JaA-Ft-hl2"/>
                                 <include reference="KCX-cQ-GhR"/>
@@ -152,6 +163,7 @@
                                 <include reference="ARu-KP-g9u"/>
                                 <include reference="G6a-gs-fMW"/>
                                 <include reference="jB1-up-XFd"/>
+                                <include reference="NBP-5r-7tJ"/>
                             </mask>
                         </variation>
                     </view>
@@ -183,6 +195,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3188" y="486"/>
+        </scene>
+        <!--Change Log Controller-->
+        <scene sceneID="uEw-mn-dqW">
+            <objects>
+                <tableViewController id="LGj-ki-Y8O" customClass="ChangeLogController" customModule="BreakoutProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="P6H-cm-ozX">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logcell" id="pTQ-61-6ul">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pTQ-61-6ul" id="49Y-G5-spL">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LGj-ki-Y8O" id="Bbe-uy-5Up"/>
+                            <outlet property="delegate" destination="LGj-ki-Y8O" id="ag2-ER-KgH"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0R-vA-242" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3143" y="1312.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zcJ-hg-PIS">

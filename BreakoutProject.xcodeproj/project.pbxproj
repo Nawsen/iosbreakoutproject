@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C00BAF0D1C482A7C00E5601C /* ChangeLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00BAF0C1C482A7C00E5601C /* ChangeLogController.swift */; settings = {ASSET_TAGS = (); }; };
 		C04AD5101C28391F005DEFBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E846611C244558003FC31C /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		C0860A9C1C24628A00B1696A /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0860A9B1C24628A00B1696A /* GameOverScene.swift */; settings = {ASSET_TAGS = (); }; };
 		C0E846571C244557003FC31C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E846561C244557003FC31C /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C00BAF0C1C482A7C00E5601C /* ChangeLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeLogController.swift; path = ../ChangeLogController.swift; sourceTree = "<group>"; };
 		C0860A9B1C24628A00B1696A /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		C0E846531C244557003FC31C /* BreakoutProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakoutProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E846561C244557003FC31C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				C0E846631C244558003FC31C /* LaunchScreen.storyboard */,
 				C0E846661C244558003FC31C /* Info.plist */,
 				C0F0A1691C2AEE9A00E3BA0C /* HighscoreController.swift */,
+				C00BAF0C1C482A7C00E5601C /* ChangeLogController.swift */,
 			);
 			path = BreakoutProject;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			files = (
 				C0E8465B1C244558003FC31C /* GameScene.swift in Sources */,
 				C0F0A16A1C2AEE9A00E3BA0C /* HighscoreController.swift in Sources */,
+				C00BAF0D1C482A7C00E5601C /* ChangeLogController.swift in Sources */,
 				C0E8465D1C244558003FC31C /* GameViewController.swift in Sources */,
 				C0860A9C1C24628A00B1696A /* GameOverScene.swift in Sources */,
 				C0E846571C244557003FC31C /* AppDelegate.swift in Sources */,
